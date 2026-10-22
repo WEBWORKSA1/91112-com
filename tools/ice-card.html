@@ -1,0 +1,20 @@
+---
+layout: "default"
+title: "ICE Card Maker: Free Printable In-Case-of-Emergency Card | 91112"
+description: "Create a wallet-size In Case of Emergency card with your contacts, medical notes and local emergency number. Nothing leaves your device."
+root: "../"
+active: "tools.html"
+head: "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://91112.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Tools\", \"item\": \"https://91112.com/tools.html\"}]}</script><script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"ICE card maker\", \"applicationCategory\": \"HealthApplication\", \"operatingSystem\": \"Any\", \"offers\": {\"@type\": \"Offer\", \"price\": \"0\", \"priceCurrency\": \"USD\"}}</script>"
+---
+{% raw %}
+<div class="page-hero no-print"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../tools.html">Tools</a> › ICE card maker</nav><span class="eyebrow">Free tool</span><h1>ICE card maker</h1><p class="muted" style="max-width:720px">Create a wallet-size In Case of Emergency card with your contacts, medical notes and local emergency number. Nothing leaves your device.</p></div></div>
+<section><div class="wrap"><div class="grid g2"><form id="ice-form" class="card no-print" onsubmit="return false">
+<label for="i-name">Your name</label><input id="i-name" name="name" autocomplete="name">
+<label for="i-country">Country</label><select id="i-country" name="country"></select>
+<div class="row"><div><label for="i-c1">Contact 1</label><input id="i-c1" name="c1" placeholder="Name / relation"></div><div><label for="i-c1p">Phone</label><input id="i-c1p" name="c1p" type="tel"></div></div>
+<div class="row"><div><label for="i-c2">Contact 2</label><input id="i-c2" name="c2" placeholder="Name / relation"></div><div><label for="i-c2p">Phone</label><input id="i-c2p" name="c2p" type="tel"></div></div>
+<label for="i-med">Medical notes (allergies, conditions, medications, blood type)</label><textarea id="i-med" name="med"></textarea>
+<div class="row"><div><label for="i-meet">Meeting place</label><input id="i-meet" name="meet"></div><div><label for="i-doc">Doctor</label><input id="i-doc" name="doc"></div></div>
+<button type="button" class="btn btn-red" id="ice-print" style="margin-top:14px">🖨 Print card</button>
+<p class="muted" style="font-size:.82rem;margin-top:8px">Saved only in this browser. Also add ICE details to your phone's emergency/medical ID so responders can see them on a locked screen.</p></form>
+<div><div id="ice-preview"></div></div></div></div></section>{% endraw %}
