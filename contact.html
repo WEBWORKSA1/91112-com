@@ -1,0 +1,20 @@
+---
+layout: "default"
+title: "Contact 91112.com"
+description: "Contact 91112.com for questions, corrections, partnerships, advertising and press."
+root: ""
+active: ""
+head: "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://91112.com/\"}]}</script>"
+---
+{% raw %}
+<div class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › Contact</nav><h1>Contact 91112</h1><p class="muted" style="max-width:720px">We read every message. <b>This form is not monitored for emergencies</b> — if someone needs help now, call <a data-sos-tel href="tel:112"><span data-sos-num>112</span></a>.</p></div></div>
+<section><div class="wrap grid g2">
+<form class="card" data-form="Contact message" novalidate>
+<label for="ct-topic">Topic</label><select id="ct-topic" name="topic" required><option value="">Choose…</option><option>General question</option><option>Correction</option><option>Partnership / sponsorship</option><option>Advertising</option><option>Press</option><option>Website / domain acquisition</option><option>Other</option></select>
+<div class="row"><div><label for="ct-name">Name</label><input id="ct-name" name="name" required autocomplete="name"></div><div><label for="ct-email">Email</label><input id="ct-email" type="email" name="email" required autocomplete="email"></div></div>
+<label for="ct-msg">Message</label><textarea id="ct-msg" name="message" required></textarea>
+<label class="check"><input type="checkbox" name="consent" value="yes" required> I accept the <a href="privacy.html">privacy policy</a>.</label>
+<label class="hp"><input name="_gotcha" tabindex="-1" autocomplete="off"></label>
+<button class="btn btn-red btn-lg" type="submit" style="margin-top:12px">Send message</button><div class="form-msg" role="status"></div></form>
+<div class="card"><h2>Other ways to reach us</h2><ul><li><b>Website, domain, sponsorship, advertising or partnership:</b> <a href="https://web.works/contact" target="_blank" rel="noopener">web.works/contact</a></li><li><b>Report a wrong number:</b> <a href="report-correction.html">correction form</a></li><li><b>Free provider quotes:</b> <a href="get-protected.html">get protected</a></li><li><b>Jobs &amp; volunteering:</b> <a href="careers.html">careers</a></li></ul><p class="muted">We aim to reply within 2 business days.</p></div>
+</div></section>{% endraw %}
