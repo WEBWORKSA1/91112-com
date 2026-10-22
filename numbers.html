@@ -1,0 +1,22 @@
+---
+layout: "default"
+title: "Emergency Numbers by Country: Police, Ambulance, Fire (193 Countries) | 91112"
+description: "Every country's police, ambulance and fire emergency numbers, plus where 112 and 911 work from mobile phones. Searchable, printable, updated October 22, 2026."
+root: ""
+active: "numbers.html"
+head: "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://91112.com/\"}]}</script>"
+---
+{% raw %}
+<div class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › Emergency numbers</nav><span class="eyebrow">193 countries · updated October 22, 2026</span><h1>Emergency numbers by country</h1>
+<p class="muted" style="max-width:760px">Police, ambulance and fire numbers worldwide, plus whether 112 and 911 work from mobile phones. Search, filter by region, or open a country for details and tap-to-call.</p>
+<div class="search" style="max-width:560px;margin-top:14px"><input id="country-search" type="search" placeholder="Search country or number…" aria-label="Search countries"></div>
+<div class="filters"><button class="on" data-r="All">All</button><button class="" data-r="Africa">Africa</button><button class="" data-r="Asia">Asia</button><button class="" data-r="Europe">Europe</button><button class="" data-r="Middle East">Middle East</button><button class="" data-r="North America">North America</button><button class="" data-r="Central America">Central America</button><button class="" data-r="Caribbean">Caribbean</button><button class="" data-r="South America">South America</button><button class="" data-r="Oceania">Oceania</button></div><p class="muted" style="margin-top:8px"><span id="country-count">193</span> results</p></div></div>
+<section><div class="wrap"><div class="results" id="country-results"></div></div></section>
+<section class="band"><div class="wrap">
+<div class="sec-head"><div><h2>Full table</h2></div><input id="table-filter" type="search" placeholder="Filter table…" style="max-width:280px" aria-label="Filter table"></div>
+<div class="table-wrap" id="numbers-table"><table><thead><tr><th>Country</th><th>Region</th><th>Single</th><th>Police</th><th>Ambulance</th><th>Fire</th><th>112 mobile</th><th>911</th></tr></thead><tbody></tbody></table></div>
+<p class="muted" style="margin-top:10px">Source: public emergency-number listings and national authorities. Found an error? <a href="report-correction.html">Report it</a>.</p>
+</div></section>
+<section><div class="wrap"><h2>Browse all countries</h2><p class="muted">{% endraw %}{% for x in site.data.countries %}<a href="numbers/{{ x.s }}.html">{{ x.c | escape }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}{% raw %}</p></div></section>
+<div data-lead="travel-insurance" data-title="Travelling or caring for someone abroad? Get protected"></div>
+{% endraw %}
