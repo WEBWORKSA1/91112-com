@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{% assign c = site.data.countries | where: "iso", page.iso | first %}{% assign n = c.g %}{% if n == nil or n == "" %}{% assign n = c.a %}{% endif %}{% if n == nil or n == "" %}{% assign n = c.p %}{% endif %}{% assign n = n | split: " " | first | split: "/" | first | split: "," | first %}{% assign R = page.root %}
+<div class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="{{ R }}index.html">Home</a> › <a href="{{ R }}numbers.html">Emergency numbers</a> › {{ c.c | escape }}</nav><span class="eyebrow">{{ c.r }} · Emergency numbers</span><h1>Emergency numbers in {{ c.c | escape }}</h1>
+<p class="muted">Police, ambulance and fire numbers for {{ c.c | escape }}, plus whether 112 and 911 work from a mobile phone. Last checked {{ site.updated }}.</p></div></div>
+<div class="wrap article">
+<div class="prose">
+<div class="dial" style="max-width:520px"><div class="where"><span class="lbl">{{ c.c | escape }} — main number</span><span class="lbl">{{ c.iso }}</span></div>
+<div class="lcd"><div class="big">{{ n }}</div><div class="sub">Tap to call from a phone</div></div>
+<a class="btn btn-red btn-lg" style="width:100%;margin-top:12px" href="tel:{{ n }}">📞 Call {{ n }}</a></div>
+<h2 id="all">All emergency numbers in {{ c.c | escape }}</h2>
+<div class="table-wrap" style="max-height:none"><table><tbody>
+<tr><td>Single emergency number</td><td class="n">{{ c.g | default: "—" }}</td></tr>
+<tr><td>Police</td><td class="n">{{ c.p | default: "—" }}</td></tr>
+<tr><td>Ambulance / medical</td><td class="n">{{ c.a | default: "—" }}</td></tr>
+<tr><td>Fire &amp; rescue</td><td class="n">{{ c.f | default: "—" }}</td></tr>
+</tbody></table></div>
+{% if c.n != "" %}<div class="callout blue"><p><b>Also useful:</b> {{ c.n | escape }}</p></div>{% endif %}
+<h2 id="mobile">Do 112 and 911 work in {{ c.c | escape }}?</h2>
+<ul><li><b>112:</b> {% if c.m112 %}<span class="yes">Yes</span> — 112 connects from mobile phones.{% else %}Not confirmed — use the local numbers above.{% endif %}</li>
+<li><b>911:</b> {% if c.m911 %}<span class="yes">Yes</span> — 911 connects or redirects.{% else %}Not confirmed — do not rely on 911 here.{% endif %}</li></ul>
+<p>On GSM mobile networks, 112 can often be dialled even without a SIM card or with the keypad locked, and is routed to the local service where supported. Behaviour varies by network and handset, so memorise the local number before you travel.</p>
+<h2 id="tips">What to say when you call</h2>
+<ol class="steps"><li><b>Where</b> you are — address, landmark, or GPS coordinates from your phone's map app.</li><li><b>What</b> happened and how many people are hurt.</li><li><b>Your phone number</b> in case the call drops.</li><li><b>Stay on the line</b> and follow instructions. Don't hang up until told to.</li></ol>
+<p>If you don't speak the local language, say “ambulance”, “police” or “fire” clearly, then your location; many centres can bring in an interpreter. Carry our <a href="{{ R }}tools/emergency-phrases.html">emergency phrase card</a>.</p>
+{% capture q1 %}What is the emergency number in {{ c.c }}?{% endcapture %}{% capture a1 %}The main emergency number in {{ c.c }} is {{ n }}.{% if c.p != "" %} Police: {{ c.p }}.{% endif %}{% if c.a != "" %} Ambulance: {{ c.a }}.{% endif %}{% if c.f != "" %} Fire: {{ c.f }}.{% endif %}{% endcapture %}
+{% capture q2 %}Does 112 work in {{ c.c }}?{% endcapture %}{% capture a2 %}{% if c.m112 %}Yes, 112 is reported to connect from mobile phones.{% else %}112 is not confirmed to work in {{ c.c }}. Use the local numbers listed.{% endif %}{% endcapture %}
+{% capture q3 %}Does 911 work in {{ c.c }}?{% endcapture %}{% capture a3 %}{% if c.m911 %}Yes, 911 is reported to connect or redirect.{% else %}911 is not confirmed to work in {{ c.c }}. Use the local numbers listed.{% endif %}{% endcapture %}
+<h2 id="faq">FAQ</h2>
+<details><summary>{{ q1 | escape }}</summary><p>{{ a1 | escape }}</p></details>
+<details><summary>{{ q2 | escape }}</summary><p>{{ a2 | escape }}</p></details>
+<details><summary>{{ q3 | escape }}</summary><p>{{ a3 | escape }}</p></details>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":{{ q1 | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ a1 | jsonify }}}},{"@type":"Question","name":{{ q2 | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ a2 | jsonify }}}},{"@type":"Question","name":{{ q3 | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ a3 | jsonify }}}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://91112.com/"},{"@type":"ListItem","position":2,"name":"Emergency numbers","item":"https://91112.com/numbers.html"},{"@type":"ListItem","position":3,"name":{{ c.c | jsonify }},"item":"https://91112.com{{ page.url }}"}]}</script>
+<p class="reviewed">Source: public emergency-number listings and national authorities, checked {{ site.updated }}. Numbers can change — if you spot an error, <a href="{{ R }}report-correction.html?country={{ c.c | uri_escape }}">report it here</a>. 91112.com is not an emergency service.</p>
+</div>
+<aside class="aside no-print"><div class="card"><h3>Nearby in {{ c.r }}</h3><div class="grid">{% assign peers = site.data.countries | where: "r", c.r %}{% assign shown = 0 %}{% for x in peers %}{% if x.iso != c.iso and shown < 6 and x.c > c.c %}{% assign c2 = x %}{% assign keep = c %}{% assign c = x %}{% assign n = c.g %}{% if n == nil or n == "" %}{% assign n = c.a %}{% endif %}{% if n == nil or n == "" %}{% assign n = c.p %}{% endif %}{% assign n = n | split: " " | first | split: "/" | first | split: "," | first %}<a class="cty" href="{{ x.s }}.html"><span>{{ x.c | escape }}</span><b>{{ n }}</b></a>{% assign c = keep %}{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}{% if shown < 6 %}{% for x in peers %}{% if x.iso != c.iso and shown < 6 and x.c < c.c %}{% assign keep = c %}{% assign c = x %}{% assign n = c.g %}{% if n == nil or n == "" %}{% assign n = c.a %}{% endif %}{% if n == nil or n == "" %}{% assign n = c.p %}{% endif %}{% assign n = n | split: " " | first | split: "/" | first | split: "," | first %}<a class="cty" href="{{ x.s }}.html"><span>{{ x.c | escape }}</span><b>{{ n }}</b></a>{% assign c = keep %}{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}{% endif %}</div>
+<a class="btn btn-ink" style="width:100%;margin-top:12px" href="{{ R }}tools/travel-emergency-card.html">Build a travel card</a>
+<a class="btn btn-red" style="width:100%;margin-top:8px" href="{{ R }}get-protected.html?need=travel-insurance">Travel medical cover quotes</a></div></aside>
+</div>
