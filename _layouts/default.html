@@ -1,0 +1,50 @@
+{% if page.iso %}{% assign c = site.data.countries | where: "iso", page.iso | first %}{% assign n = c.g %}{% if n == nil or n == "" %}{% assign n = c.a %}{% endif %}{% if n == nil or n == "" %}{% assign n = c.p %}{% endif %}{% assign n = n | split: " " | first | split: "/" | first | split: "," | first %}{% capture ptitle %}Emergency Number in {{ c.c }}: Police, Ambulance, Fire ({{ n }}) | 91112{% endcapture %}{% capture pdesc %}{{ c.c }} emergency numbers: main {{ n }}{% if c.p != "" %}, police {{ c.p }}{% endif %}{% if c.a != "" %}, ambulance {{ c.a }}{% endif %}{% if c.f != "" %}, fire {{ c.f }}{% endif %}. Does 112 or 911 work? Checked {{ site.updated }}.{% endcapture %}{% else %}{% assign ptitle = page.title %}{% assign pdesc = page.description %}{% endif %}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{{ page.head_early }}
+<title>{{ ptitle | escape }}</title>
+<meta name="description" content="{{ pdesc | escape }}">
+{% if page.noindex %}<meta name="robots" content="noindex,follow">{% else %}<meta name="robots" content="index,follow,max-image-preview:large">{% endif %}
+<link rel="canonical" href="https://91112.com{{ page.url }}">
+<meta name="theme-color" content="#d7262b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="91112 · World Emergency &amp; Safety Hub">
+<meta property="og:title" content="{{ ptitle | escape }}">
+<meta property="og:description" content="{{ pdesc | escape }}">
+<meta property="og:url" content="https://91112.com{{ page.url }}">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="{{ page.root }}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="{{ page.root }}site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ page.root }}assets/css/style.css">
+{% unless page.ads == false %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>{% endunless %}
+
+{{ page.head }}
+</head>
+<body data-root="{{ page.root }}">
+<a class="skip" href="#main">Skip to content</a>
+<div class="ownerbar">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership — <a href="https://web.works/contact" target="_blank" rel="noopener">web.works/contact</a></div>
+<div class="sosbar" role="note"><div class="wrap"><span>⚠ In an emergency, call now:</span> <b><a data-sos-tel href="tel:112"><span data-sos-num>112</span></a></b> <span>(<span data-sos-name>your country</span>)</span> <span class="sos-note">· 91112.com is an information site, not an emergency service.</span></div></div>
+<header class="site-head">
+<div class="wrap">
+<a class="logo" href="{{ page.root }}index.html" aria-label="91112 home">
+<span class="mark" aria-hidden="true"><span>9</span><span>1</span><span>1</span><span>1</span><span>2</span></span>
+<span>91112<small>World Emergency &amp; Safety Hub</small></span>
+</a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main"><a href="{{ page.root }}numbers.html"{% if page.active == "numbers.html" %} aria-current="page"{% endif %}>Emergency Numbers</a><a href="{{ page.root }}first-aid.html"{% if page.active == "first-aid.html" %} aria-current="page"{% endif %}>First Aid</a><a href="{{ page.root }}prepare.html"{% if page.active == "prepare.html" %} aria-current="page"{% endif %}>Prepare</a><a href="{{ page.root }}tools.html"{% if page.active == "tools.html" %} aria-current="page"{% endif %}>Tools</a><a href="{{ page.root }}videos.html"{% if page.active == "videos.html" %} aria-current="page"{% endif %}>Videos</a><a href="{{ page.root }}support.html"{% if page.active == "support.html" %} aria-current="page"{% endif %}>Support</a><button class="theme-btn" title="Toggle dark mode" aria-label="Toggle dark mode">◐</button><a class="btn btn-red btn-sm" href="{{ page.root }}get-protected.html">Get Protected</a></nav>
+</div>
+</header>
+<main id="main">
+{{ content }}
+</main>
+<footer class="site-foot" id="site-foot"><div class="wrap foot-legal" style="border:0;margin:0;padding:0"><p><b>Not an emergency service.</b> In danger? Call your local emergency number now. · <a href="{{ page.root }}about.html">About</a> · <a href="{{ page.root }}contact.html">Contact</a> · <a href="{{ page.root }}privacy.html">Privacy</a> · <a href="{{ page.root }}terms.html">Terms</a> · <a href="{{ page.root }}disclaimer.html">Medical disclaimer</a> · <a href="{{ page.root }}trademark-copyright.html">Trademark &amp; copyright</a> · <a href="{{ page.root }}sitemap.html">Sitemap</a></p></div></footer>
+<script src="{{ page.root }}assets/js/config.js"></script>
+<script src="{{ page.root }}assets/js/countries-data.js"></script>
+<script src="{{ page.root }}assets/js/chrome.js"></script>
+<script src="{{ page.root }}assets/js/main.js"></script>
+</body>
+</html>
