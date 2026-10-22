@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /build/
+
+Sitemap: https://91112.com/sitemap.xml
