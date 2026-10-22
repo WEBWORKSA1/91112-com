@@ -1,0 +1,11 @@
+title: 91112 World Emergency & Safety Hub
+description: Emergency numbers for every country, first aid and preparedness tools.
+url: https://91112.com
+updated: "October 22, 2026"
+exclude:
+  - README.md
+  - PROMPTS.md
+  - RESEARCH.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
