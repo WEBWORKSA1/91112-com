@@ -1,0 +1,17 @@
+---
+layout: "default"
+title: "Report a Wrong Emergency Number | 91112"
+description: "Help keep 91112.com accurate: report outdated emergency numbers, guide errors or translation fixes."
+root: ""
+active: ""
+head: "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://91112.com/\"}]}</script>"
+---
+{% raw %}
+<div class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › Report a correction</nav><h1>Report a wrong number or error</h1><p class="muted" style="max-width:720px">Accuracy saves lives. If a number has changed or a guide is out of date, tell us and include an official source if you can.</p></div></div>
+<section><div class="wrap"><form class="card" data-form="Correction report" data-after="inline" novalidate style="max-width:760px">
+<div class="row"><div><label for="r-country">Country / page</label><input id="r-country" name="country" required></div><div><label for="r-field">What's wrong?</label><select id="r-field" name="field"><option>Police number</option><option>Ambulance number</option><option>Fire number</option><option>112 / 911 compatibility</option><option>First-aid guide</option><option>Translation</option><option>Other</option></select></div></div>
+<label for="r-correct">Correct information</label><textarea id="r-correct" name="correction" required></textarea>
+<label for="r-src">Official source link</label><input id="r-src" name="source" type="url" placeholder="https://">
+<label for="r-email">Your email (optional, for follow-up)</label><input id="r-email" type="email" name="email" autocomplete="email">
+<label class="hp"><input name="_gotcha" tabindex="-1" autocomplete="off"></label>
+<button class="btn btn-red btn-lg" type="submit" style="margin-top:12px">Send correction</button><div class="form-msg" role="status"></div></form></div></section>{% endraw %}
