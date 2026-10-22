@@ -1,0 +1,30 @@
+---
+layout: "default"
+title: "Support 91112: Donate to Keep Emergency Information Free"
+description: "Donate or pledge to 91112.com to fund verified emergency numbers, first-aid guides, translations, contests and community outreach."
+root: ""
+active: "support.html"
+head: "<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://91112.com/\"}]}</script>"
+---
+{% raw %}
+<div class="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › Support</nav><span class="eyebrow">Support 91112</span><h1>Help keep life-saving information free</h1><p class="muted" style="max-width:740px">91112.com is independent. Your support pays for checking numbers, writing and medically reviewing guides, translations, prizes for our safety challenges, promotion to schools and communities, and hiring the people who make it all happen.</p></div></div>
+<section><div class="wrap">
+<div class="card" style="margin-bottom:20px"><b>2026 operating goal</b><div class="progress" style="margin:10px 0"><i id="goal-bar" style="width:2%"></i></div><span class="muted" id="goal-label"></span></div>
+<div class="tiers"><div class="card tier" data-amt="5" tabindex="0" role="button"><span class="tag">Supporter</span><div class="amt">$5</div><p class="muted" style="font-size:.88rem">Covers verifying 10 country listings</p></div><div class="card tier sel" data-amt="25" tabindex="0" role="button"><span class="tag">Responder</span><div class="amt">$25</div><p class="muted" style="font-size:.88rem">Funds one guide translation</p></div><div class="card tier" data-amt="100" tabindex="0" role="button"><span class="tag">Guardian</span><div class="amt">$100</div><p class="muted" style="font-size:.88rem">Sponsors a school safety session</p></div><div class="card tier" data-amt="250" tabindex="0" role="button"><span class="tag">Lifesaver</span><div class="amt">$250</div><p class="muted" style="font-size:.88rem">Funds a quarterly contest prize</p></div></div>
+<div class="grid g2" style="margin-top:24px">
+<div class="card"><h2>Give now</h2><div id="pay-buttons" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+<div id="pledge-note"><p class="muted">Online checkout is being set up. Pledge below and we'll send you a secure payment link.</p></div>
+<form data-form="Donation pledge" novalidate>
+<div class="row"><div><label for="d-amt">Amount (USD)</label><input id="donation-amount" name="amount" type="number" min="1" value="25" required></div><div><label for="d-freq">Frequency</label><select id="d-freq" name="frequency"><option>One-time</option><option>Monthly</option><option>Yearly</option></select></div></div>
+<label for="d-purpose">Direct my gift to</label><select id="d-purpose" name="purpose"><option>Where it's needed most</option><option>Ongoing operations &amp; hosting</option><option>Promotion &amp; community outreach</option><option>Hiring reviewers, writers &amp; translators</option><option>Contests &amp; prizes</option><option>School safety programme</option></select>
+<div class="row"><div><label for="d-name">Name</label><input id="d-name" name="name" required autocomplete="name"></div><div><label for="d-email">Email</label><input id="d-email" type="email" name="email" required autocomplete="email"></div></div>
+<label class="check"><input type="checkbox" name="public" value="yes"> List my name on the supporters wall</label>
+<label class="hp"><input name="_gotcha" tabindex="-1" autocomplete="off"></label>
+<button class="btn btn-red btn-lg" type="submit" style="margin-top:12px">Pledge my support</button><div class="form-msg" role="status"></div></form></div>
+<div class="card"><h2>Where the money goes</h2>
+<table><tbody><tr><td>Verification &amp; operations</td><td class="n">35%</td></tr><tr><td>Writers, medical reviewers &amp; translators</td><td class="n">30%</td></tr><tr><td>Promotion &amp; school outreach</td><td class="n">20%</td></tr><tr><td>Contests &amp; prizes</td><td class="n">15%</td></tr></tbody></table>
+<p class="muted" style="margin-top:12px;font-size:.88rem">Contributions to 91112.com are not tax-deductible charitable donations. For tax-deductible giving to disaster relief, consider your national Red Cross / Red Crescent society.</p>
+<h3>Other ways to help</h3><ul><li><a href="contests.html">Sponsor a prize</a></li><li><a href="careers.html">Volunteer your skills</a></li><li><a href="advertise.html">Corporate sponsorship</a></li><li>Share 91112.com with your school or workplace</li></ul></div>
+</div>
+</div></section>
+{% endraw %}
